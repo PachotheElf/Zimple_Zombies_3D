@@ -1,0 +1,19 @@
+/*
+ * ZimpleZombies.c
+ *
+ *  Created on: Jan 25, 2016
+ *      Author: Pacho
+ */
+#include "ZimpleZombies.h"
+
+volatile byte accel[3] =	{	0,	0,	0};	//	X, Y, Z
+volatile byte flex[3]	=	{	0,	0,	0};
+
+byte sendData(bool id){
+	byte error = 0;
+	switch(id){
+	case ID_ACCEL:
+		break;
+	}
+	return error;
+}

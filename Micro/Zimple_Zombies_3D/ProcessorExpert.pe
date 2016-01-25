@@ -4,7 +4,7 @@
     <Name>Zimple_Zombies_3D</Name>
     <SavedBy>Pacho</SavedBy>
     <ModificationStamp>7</ModificationStamp>
-    <Date>2016-01-19</Date>
+    <Date>2016-01-25</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.1.RT6_b1423-0421</PEversion>
   </Header>
@@ -2438,7 +2438,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntVreset</ItemSymbol>
-        <Value>Vreset</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>

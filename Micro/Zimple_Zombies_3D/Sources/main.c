@@ -40,6 +40,10 @@
 #include "IO_Map.h"
 
 /* User includes (#include below this line is not maintained by Processor Expert) */
+#include "ZimpleZombies.h"
+
+extern volatile byte accel[3];
+extern volatile byte flex[3];
 
 void main(void)
 {

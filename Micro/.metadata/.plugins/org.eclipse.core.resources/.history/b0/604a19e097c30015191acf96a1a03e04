@@ -1,0 +1,19 @@
+/*
+ * ZimpleZombies.h
+ *
+ *  Created on: Jan 25, 2016
+ *      Author: Pacho
+ */
+#include "PE_Types.h"
+#ifndef ZIMPLEZOMBIES_H_
+#define ZIMPLEZOMBIES_H_
+
+volatile unsigned char accel[3] =	{	0,	0,	0};	//	X, Y, Z
+volatile unsigned char flex[3]	=	{	0,	0,	0};
+
+#define ID_ACCEL	0
+#define	ID_FLEX		1
+
+byte sendData(bool ID);
+
+#endif /* ZIMPLEZOMBIES_H_ */
