@@ -15,6 +15,6 @@
 		<item value="107" key="DIALOG_Y_ORIGIN"/>
 		<item value="416" key="DIALOG_HEIGHT"/>
 		<item value="478" key="DIALOG_X_ORIGIN"/>
-		<item value="true" key="TOGGLE_SELECTED"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
 	</section>
 </section>

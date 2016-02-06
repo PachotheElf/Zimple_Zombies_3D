@@ -827,10 +827,10 @@ asm(BGND);
       </boolgroup>
     </CompilerProperties>
   </CPU_Bean>
-  <Bean name="TI1" type="TimerInt">
+  <Bean name="Accel_Timer" type="TimerInt">
     <Enabled v="Y" />
     <Properties>
-      <Component_name v="TI1" />
+      <Component_name v="Accel_Timer" />
       <Periodic_interrupt_source v="TPM10" />
       <Counter v="TPM1" />
       <boolgroup name="Interrupt service/event" v="Enabled">
@@ -871,7 +871,7 @@ asm(BGND);
       <event name="BeforeNewSpeed" v="don&amp;apos;t generate code" />
       <event name="AfterNewSpeed" v="don&amp;apos;t generate code" />
       <event name="OnInterrupt" v="generate code">
-        <Event_procedure_name v="TI1_OnInterrupt" />
+        <Event_procedure_name v="Accel_Timer_OnInterrupt" />
         <Priority v="same as interrupt" />
       </event>
     </Events>
@@ -1045,10 +1045,10 @@ asm(BGND);
       <Start v="don&amp;apos;t generate code" />
       <Stop v="don&amp;apos;t generate code" />
       <Measure v="generate code" />
-      <MeasureChan v="don&amp;apos;t generate code" />
+      <MeasureChan v="generate code" />
       <EnableIntChanTrigger v="don&amp;apos;t generate code" />
-      <GetValue v="don&amp;apos;t generate code" />
-      <GetChanValue v="don&amp;apos;t generate code" />
+      <GetValue v="generate code" />
+      <GetChanValue v="generate code" />
       <GetValue8 v="don&amp;apos;t generate code" />
       <GetChanValue8 v="don&amp;apos;t generate code" />
       <GetValue16 v="generate code" />

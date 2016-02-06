@@ -26,7 +26,7 @@
 						<toolChain errorParsers="" id="hcs08.project.toolchain.1086038241" name="HCS08 Toolchain" superClass="hcs08.project.toolchain">
 							<option id="hc08.toolchain.sharedoption.mmu.559721720" name="Enable Memory Management Unit (MMU) Support (-MMU)" superClass="hc08.toolchain.sharedoption.mmu" value="true" valueType="boolean"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="hc08.toolchain.platform.1287037250" name="HC08 Targetplatform" superClass="hc08.toolchain.platform"/>
-							<builder buildPath="${ProjDirPath}/FLASH" errorParsers="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;org.eclipse.cdt.core.GmakeErrorParser;com.freescale.core.ide.cdt.errorParsers.LltErrorParser;com.freescale.core.ide.cdt.errorParsers.AsmErrorParser;com.freescale.core.ide.cdt.errorParsers.IcodeErrorParser;com.freescale.core.ide.cdt.errorParsers.CobjErrorParser;com.freescale.core.ide.cdt.errorParsers.S08ErrorParser;com.freescale.core.ide.cdt.errorParsers.LnkErrorParser;com.freescale.core.ide.cdt.errorParsers.MwfeErrorParser" id="hc08.toolchain.builder.2044660660" keepEnvironmentInBuildfile="false" name="GNU Make Builder" parallelBuildWorkspaceOn="true" superClass="hc08.toolchain.builder">
+							<builder buildPath="${ProjDirPath}/FLASH" errorParsers="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;org.eclipse.cdt.core.GmakeErrorParser;com.freescale.core.ide.cdt.errorParsers.LltErrorParser;com.freescale.core.ide.cdt.errorParsers.AsmErrorParser;com.freescale.core.ide.cdt.errorParsers.IcodeErrorParser;com.freescale.core.ide.cdt.errorParsers.CobjErrorParser;com.freescale.core.ide.cdt.errorParsers.S08ErrorParser;com.freescale.core.ide.cdt.errorParsers.LnkErrorParser;com.freescale.core.ide.cdt.errorParsers.MwfeErrorParser" id="hc08.toolchain.builder.2044660660" keepEnvironmentInBuildfile="false" name="GNU Make Builder" parallelBuildOn="true" parallelBuildWorkspaceOn="true" parallelizationNumber="optimal" superClass="hc08.toolchain.builder">
 								<outputEntries>
 									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="FLASH"/>
 								</outputEntries>
@@ -34,7 +34,7 @@
 							<tool errorParsers="" id="s08.toolchain.decoder.1313731991" name="S08 Disassembler" superClass="s08.toolchain.decoder"/>
 							<tool errorParsers="" id="hc08.toolchain.linker.2066088410" name="S08 Linker" superClass="hc08.toolchain.linker">
 								<option id="hc08.toolchain.linker.base.general.paramFile.1231267962" name="Parameter File" superClass="hc08.toolchain.linker.base.general.paramFile" value="${ProjDirPath}/Project_Settings/Linker_Files/ProcessorExpert.prm" valueType="string"/>
-								<option id="hc08.toolchain.linker.base.libraries.libs.2084280815" name="Libraries" superClass="hc08.toolchain.linker.base.libraries.libs" valueType="libs"/>
+								<option id="hc08.toolchain.linker.base.libraries.libs.2084280815" name="Libraries" superClass="hc08.toolchain.linker.base.libraries.libs"/>
 								<option id="hc08.toolchain.linker.base.messages.WmsgSd.1249043511" name="Set messages to Disable" superClass="hc08.toolchain.linker.base.messages.WmsgSd" value="-WmsgSd1100 -WmsgSd1912" valueType="string"/>
 								<inputType id="hc08.toolchain.linker.base.input.196009427" name="Linker Input" superClass="hc08.toolchain.linker.base.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>

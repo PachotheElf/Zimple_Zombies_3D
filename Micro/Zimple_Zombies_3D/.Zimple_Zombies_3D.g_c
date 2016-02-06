@@ -34,7 +34,7 @@
         <Line>Project_Settings\Linker_Files\ProcessorExpert.prm</Line>
         <Line>Generated_Code\Vectors.c</Line>
       </GenExtraFiles>
-      <XtraAge1>1211303497</XtraAge1>
+      <XtraAge1>1212580230</XtraAge1>
       <GenExtraFileType1>4</GenExtraFileType1>
       <GenLinkedFiles lines_count="0" />
       <GenEventModules lines_count="1">
@@ -47,9 +47,10 @@
         <Line>AS1_OnTxChar</Line>
         <Line>AS1_OnFullRxBuf</Line>
         <Line>AS1_OnFreeTxBuf</Line>
-        <Line>TI1_OnInterrupt</Line>
+        <Line>Accel_Timer_OnInterrupt</Line>
       </GenMethodsInEvents>
       <GenAllModules lines_count="9">
+        <Line>Accel_Timer</Line>
         <Line>AD1</Line>
         <Line>AS1</Line>
         <Line>Cpu</Line>
@@ -58,18 +59,17 @@
         <Line>PE_Const</Line>
         <Line>PE_Error</Line>
         <Line>PE_Types</Line>
-        <Line>TI1</Line>
       </GenAllModules>
       <GenExternModules lines_count="0" />
       <GenBeanModules lines_count="3">
-        <Line>TI1</Line>
+        <Line>Accel_Timer</Line>
         <Line>AS1</Line>
         <Line>AD1</Line>
       </GenBeanModules>
     </GenFiles>
     <SignalListFile>Documentation\Zimple_Zombies_3D_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>MetrowerksHCS08CC</DestinationCompiler>
-    <ProjectModificationStamp>8</ProjectModificationStamp>
+    <ProjectModificationStamp>10</ProjectModificationStamp>
   </Options>
   <CpuID_2>
     <Generated>false</Generated>
@@ -126,7 +126,7 @@
     <GenDriverVersion>01.40</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
     <HeaderAge>1211303210</HeaderAge>
-    <CodeAge>1211303497</CodeAge>
+    <CodeAge>1212581284</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>20</GenNumMethods>
     <SetHighSpeed>false</SetHighSpeed>
@@ -172,12 +172,12 @@
   </CpuID_4>
   <ComponentID_8>
     <Generated>true</Generated>
-    <GenCompName>TI1</GenCompName>
+    <GenCompName>Accel_Timer</GenCompName>
     <GenComponentVersion>02.161</GenComponentVersion>
     <GenDriverVersion>01.23</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1211303357</HeaderAge>
-    <CodeAge>1211303357</CodeAge>
+    <HeaderAge>1212580229</HeaderAge>
+    <CodeAge>1212580229</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>14</GenNumMethods>
     <Enable>false</Enable>
@@ -196,13 +196,13 @@
     <SetFreqMHz>false</SetFreqMHz>
     <GenNumEvents>3</GenNumEvents>
     <BeforeNewSpeed_Selected>0</BeforeNewSpeed_Selected>
-    <BeforeNewSpeed_Name>TI1_BeforeNewSpeed</BeforeNewSpeed_Name>
+    <BeforeNewSpeed_Name>Accel_Timer_BeforeNewSpeed</BeforeNewSpeed_Name>
     <BeforeNewSpeed_Priority>interrupts disabled</BeforeNewSpeed_Priority>
     <AfterNewSpeed_Selected>0</AfterNewSpeed_Selected>
-    <AfterNewSpeed_Name>TI1_AfterNewSpeed</AfterNewSpeed_Name>
+    <AfterNewSpeed_Name>Accel_Timer_AfterNewSpeed</AfterNewSpeed_Name>
     <AfterNewSpeed_Priority>interrupts disabled</AfterNewSpeed_Priority>
     <OnInterrupt_Selected>2</OnInterrupt_Selected>
-    <OnInterrupt_Name>TI1_OnInterrupt</OnInterrupt_Name>
+    <OnInterrupt_Name>Accel_Timer_OnInterrupt</OnInterrupt_Name>
     <OnInterrupt_Priority>same as interrupt</OnInterrupt_Priority>
     <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
     <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
@@ -509,8 +509,8 @@
     <GenComponentVersion>01.697</GenComponentVersion>
     <GenDriverVersion>01.30</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1211303536</HeaderAge>
-    <CodeAge>1211303536</CodeAge>
+    <HeaderAge>1212581284</HeaderAge>
+    <CodeAge>1212581284</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>19</GenNumMethods>
     <Enable>false</Enable>

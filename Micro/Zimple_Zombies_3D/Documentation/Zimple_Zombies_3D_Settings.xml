@@ -827,10 +827,10 @@ asm(BGND);
       </boolgroup>
     </CompilerProperties>
   </CPU_Bean>
-  <Bean name="TI1" type="TimerInt">
+  <Bean name="Accel_Timer" type="TimerInt">
     <Enabled v="Y" />
     <Properties>
-      <Component_name v="TI1" />
+      <Component_name v="Accel_Timer" />
       <Periodic_interrupt_source v="TPM10" />
       <Counter v="TPM1" />
       <boolgroup name="Interrupt service/event" v="Enabled">
@@ -871,7 +871,7 @@ asm(BGND);
       <event name="BeforeNewSpeed" v="don&amp;apos;t generate code" />
       <event name="AfterNewSpeed" v="don&amp;apos;t generate code" />
       <event name="OnInterrupt" v="generate code">
-        <Event_procedure_name v="TI1_OnInterrupt" />
+        <Event_procedure_name v="Accel_Timer_OnInterrupt" />
         <Priority v="same as interrupt" />
       </event>
     </Events>
@@ -1003,13 +1003,13 @@ asm(BGND);
       </boolgroup>
       <list name="A/D channels" v="6">
         <group name="Channel0">
-          <A_D_channel__pin_ v="PTF0_ADP10" />
+          <A_D_channel__pin_ v="PTA0_KBI1P0_TPM1CH0_ADP0_ACMP1PLUS" />
         </group>
         <group name="Channel1">
-          <A_D_channel__pin_ v="PTF1_ADP11" />
+          <A_D_channel__pin_ v="PTA1_KBI1P1_TPM2CH0_ADP1_ACMP1MINUS" />
         </group>
         <group name="Channel2">
-          <A_D_channel__pin_ v="PTF2_ADP12" />
+          <A_D_channel__pin_ v="PTF0_ADP10" />
         </group>
         <group name="Channel3">
           <A_D_channel__pin_ v="PTF3_ADP13" />
@@ -1022,7 +1022,7 @@ asm(BGND);
         </group>
       </list>
       <A_D_resolution v="8 bits" />
-      <Conversion_time v="5 &amp;#181;s" />
+      <Conversion_time v="4.768372 &amp;#181;s" />
       <Low_power_mode v="Disabled" />
       <Sample_time v="short" />
       <boolgroup name="Internal trigger" v="Disabled" />

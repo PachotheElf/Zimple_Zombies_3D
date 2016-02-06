@@ -6,7 +6,7 @@
 **     Component   : ADC
 **     Version     : Component 01.697, Driver 01.30, CPU db: 3.00.067
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2016-01-19, 00:51, # CodeGen: 5
+**     Date/Time   : 2016-02-06, 16:45, # CodeGen: 9
 **     Abstract    :
 **         This device "ADC" implements an A/D converter,
 **         its control methods and interrupt/event handling procedure.
@@ -19,13 +19,13 @@
 **            A/D interrupt priority                       : medium priority
 **          A/D channels                                   : 6
 **            Channel0                                     : 
-**              A/D channel (pin)                          : PTF0_ADP10
+**              A/D channel (pin)                          : PTA0_KBI1P0_TPM1CH0_ADP0_ACMP1PLUS
 **              A/D channel (pin) signal                   : 
 **            Channel1                                     : 
-**              A/D channel (pin)                          : PTF1_ADP11
+**              A/D channel (pin)                          : PTA1_KBI1P1_TPM2CH0_ADP1_ACMP1MINUS
 **              A/D channel (pin) signal                   : 
 **            Channel2                                     : 
-**              A/D channel (pin)                          : PTF2_ADP12
+**              A/D channel (pin)                          : PTF0_ADP10
 **              A/D channel (pin) signal                   : 
 **            Channel3                                     : 
 **              A/D channel (pin)                          : PTF3_ADP13
@@ -37,7 +37,7 @@
 **              A/D channel (pin)                          : PTF5_ADP15
 **              A/D channel (pin) signal                   : 
 **          A/D resolution                                 : 8 bits
-**          Conversion time                                : 5 µs
+**          Conversion time                                : 4.768372 µs
 **          Low-power mode                                 : Disabled
 **          Sample time                                    : short
 **          Internal trigger                               : Disabled
@@ -129,7 +129,7 @@ static void ClrSumV(void);
 
 static const  byte Table[6] = {0x01U,0x02U,0x04U,0x08U,0x10U,0x20U};  /* Table of mask constants */
 
-static const  byte Channels[6] = {0x4AU,0x4BU,0x4CU,0x4DU,0x4EU,0x4FU};  /* Contents for the device control register */
+static const  byte Channels[6] = {0x40U,0x41U,0x4AU,0x4DU,0x4EU,0x4FU};  /* Contents for the device control register */
 
 static volatile byte OutFlg;           /* Measurement finish flag */
 static volatile byte SumChan;          /* Number of measured channels */

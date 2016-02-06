@@ -6,7 +6,7 @@
 **     Component   : ADC
 **     Version     : Component 01.697, Driver 01.30, CPU db: 3.00.067
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2016-01-19, 00:51, # CodeGen: 5
+**     Date/Time   : 2016-02-06, 16:45, # CodeGen: 9
 **     Abstract    :
 **         This device "ADC" implements an A/D converter,
 **         its control methods and interrupt/event handling procedure.
@@ -19,13 +19,13 @@
 **            A/D interrupt priority                       : medium priority
 **          A/D channels                                   : 6
 **            Channel0                                     : 
-**              A/D channel (pin)                          : PTF0_ADP10
+**              A/D channel (pin)                          : PTA0_KBI1P0_TPM1CH0_ADP0_ACMP1PLUS
 **              A/D channel (pin) signal                   : 
 **            Channel1                                     : 
-**              A/D channel (pin)                          : PTF1_ADP11
+**              A/D channel (pin)                          : PTA1_KBI1P1_TPM2CH0_ADP1_ACMP1MINUS
 **              A/D channel (pin) signal                   : 
 **            Channel2                                     : 
-**              A/D channel (pin)                          : PTF2_ADP12
+**              A/D channel (pin)                          : PTF0_ADP10
 **              A/D channel (pin) signal                   : 
 **            Channel3                                     : 
 **              A/D channel (pin)                          : PTF3_ADP13
@@ -37,7 +37,7 @@
 **              A/D channel (pin)                          : PTF5_ADP15
 **              A/D channel (pin) signal                   : 
 **          A/D resolution                                 : 8 bits
-**          Conversion time                                : 5 µs
+**          Conversion time                                : 4.768372 µs
 **          Low-power mode                                 : Disabled
 **          Sample time                                    : short
 **          Internal trigger                               : Disabled

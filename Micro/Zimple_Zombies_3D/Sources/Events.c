@@ -31,13 +31,17 @@
 #include "Cpu.h"
 #include "Events.h"
 
+
 /* User includes (#include below this line is not maintained by Processor Expert) */
+#include "ZimpleZombies.h"
+
+extern byte PROGRAM_STATE;
 
 /*
 ** ===================================================================
-**     Event       :  TI1_OnInterrupt (module Events)
+**     Event       :  Accel_Timer_OnInterrupt (module Events)
 **
-**     Component   :  TI1 [TimerInt]
+**     Component   :  Accel_Timer [TimerInt]
 **     Description :
 **         When a timer interrupt occurs this event is called (only
 **         when the component is enabled - <Enable> and the events are
@@ -47,10 +51,9 @@
 **     Returns     : Nothing
 ** ===================================================================
 */
-void TI1_OnInterrupt(void)
+void Accel_Timer_OnInterrupt(void)
 {
-  /* Write your code here ... */
-
+	PROGRAM_STATE = STATE_MEASURE_ACCEL;
 }
 
 /*
@@ -160,7 +163,7 @@ void  AS1_OnFreeTxBuf(void)
 */
 void AD1_OnEnd(void)
 {
-  /* Write your code here ... */
+	PROGRAM_STATE = STATE_WORK_ACCEL;
 }
 
 

@@ -30,7 +30,7 @@
 /* Including needed modules to compile this module/procedure */
 #include "Cpu.h"
 #include "Events.h"
-#include "TI1.h"
+#include "Accel_Timer.h"
 #include "AS1.h"
 #include "AD1.h"
 /* Include shared modules, which are used for whole project */
@@ -42,19 +42,46 @@
 /* User includes (#include below this line is not maintained by Processor Expert) */
 #include "ZimpleZombies.h"
 
-extern volatile byte accel[3];
-extern volatile byte flex[3];
+extern byte PROGRAM_STATE;
+extern volatile accel_u accel;
 
 void main(void)
 {
   /* Write your local variable definition here */
-
+	byte error = 0;
+	PROGRAM_STATE = STATE_SETUP;
   /*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
   PE_low_level_init();
   /*** End of Processor Expert internal initialization.                    ***/
 
   /* Write your code here */
-  /* For example: for(;;) { } */
+  while(TRUE){
+	  switch(PROGRAM_STATE){
+	  case STATE_SETUP:
+		  PROGRAM_STATE = STATE_IDLE;
+		  break;
+	  case STATE_MEASURE_ACCEL:
+		  error = AD1_MeasureChan(ADC_HOLD, ADC_ACCEL_X);
+		  PROGRAM_STATE = STATE_WORK_ACCEL;
+		  break;
+	  case STATE_MEASURE_FLEX:
+		  break;
+	  case STATE_WORK_ACCEL:
+		  error = AD1_GetChanValue(ADC_ACCEL_X, &accel.sData.x);
+		  PROGRAM_STATE = STATE_SEND_ACCEL;
+		  break;
+	  case STATE_WORK_FLEX:
+		  break;
+	  case STATE_SEND_ACCEL:
+		  sendData(ID_ACCEL);
+		  break;
+	  case STATE_SEND_FLEX:
+		  break;
+	  case STATE_IDLE:
+	  default:
+		  break;
+	  }
+  }
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
   /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/

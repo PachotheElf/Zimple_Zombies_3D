@@ -34,17 +34,17 @@
 #include "PE_Error.h"
 #include "PE_Const.h"
 #include "IO_Map.h"
-#include "TI1.h"
+#include "Accel_Timer.h"
 #include "AS1.h"
 #include "AD1.h"
 
 
-void TI1_OnInterrupt(void);
+void Accel_Timer_OnInterrupt(void);
 /*
 ** ===================================================================
-**     Event       :  TI1_OnInterrupt (module Events)
+**     Event       :  Accel_Timer_OnInterrupt (module Events)
 **
-**     Component   :  TI1 [TimerInt]
+**     Component   :  Accel_Timer [TimerInt]
 **     Description :
 **         When a timer interrupt occurs this event is called (only
 **         when the component is enabled - <Enable> and the events are

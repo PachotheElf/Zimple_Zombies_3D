@@ -5,7 +5,7 @@
 **     Processor   : MC9S08QE128CLK
 **     Version     : Component 01.003, Driver 01.40, CPU db: 3.00.067
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2016-01-19, 00:50, # CodeGen: 4
+**     Date/Time   : 2016-02-06, 16:12, # CodeGen: 8
 **     Abstract    :
 **         This component "MC9S08QE128_80" contains initialization 
 **         of the CPU and provides basic methods and events for 
@@ -59,7 +59,7 @@
 
 
 #include "Cpu.h"
-#include "TI1.h"
+#include "Accel_Timer.h"
 #include "AS1.h"
 #include "AD1.h"
 
@@ -93,7 +93,7 @@ static void (* near const _vect[])(void) @0xFFC0 = { /* Interrupt vector table *
          Cpu_Interrupt,                /* Int.no.  7 Vtpm1ovf (at FFF0)              Unassigned */
          Cpu_Interrupt,                /* Int.no.  6 Vtpm1ch2 (at FFF2)              Unassigned */
          Cpu_Interrupt,                /* Int.no.  5 Vtpm1ch1 (at FFF4)              Unassigned */
-         TI1_Interrupt,                /* Int.no.  4 Vtpm1ch0 (at FFF6)              Used */
+         Accel_Timer_Interrupt,        /* Int.no.  4 Vtpm1ch0 (at FFF6)              Used */
          Cpu_Interrupt,                /* Int.no.  3 Vlvd (at FFF8)                  Unassigned */
          Cpu_Interrupt,                /* Int.no.  2 Virq (at FFFA)                  Unassigned */
          Cpu_Interrupt,                /* Int.no.  1 Vswi (at FFFC)                  Unassigned */
