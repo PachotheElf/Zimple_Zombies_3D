@@ -6,7 +6,7 @@
 **     Component   : AsynchroSerial
 **     Version     : Component 02.611, Driver 01.33, CPU db: 3.00.067
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2016-01-19, 00:44, # CodeGen: 2
+**     Date/Time   : 2016-02-07, 11:00, # CodeGen: 1
 **     Abstract    :
 **         This component "AsynchroSerial" implements an asynchronous serial
 **         communication. The component supports different settings of
@@ -23,8 +23,8 @@
 **             Stop bits               : 1
 **             Parity                  : none
 **             Breaks                  : Disabled
-**             Input buffer size       : 10
-**             Output buffer size      : 10
+**             Input buffer size       : 8
+**             Output buffer size      : 8
 **
 **         Registers
 **             Input buffer            : SCI1D     [$0027]
@@ -182,9 +182,7 @@ byte AS1_RecvChar(AS1_TComData *Chr)
     EnterCritical();                   /* Save the PS register */
     AS1_InpLen--;                      /* Decrease number of received chars */
     *Chr = InpBuffer[InpIndxR];        /* Received char */
-    if (++InpIndxR >= AS1_INP_BUF_SIZE) { /* Is the index out of the buffer? */
-      InpIndxR = 0U;                   /* Set the index to the start of the buffer */
-    }
+    InpIndxR = (byte)((InpIndxR + 1U) & (AS1_INP_BUF_SIZE - 1U)); /* Update index */
     Result = (byte)((SerFlag & (OVERRUN_ERR|COMMON_ERR|FULL_RX)) ? ERR_COMMON : ERR_OK);
     SerFlag &= (byte)(~(byte)(OVERRUN_ERR|COMMON_ERR|FULL_RX|CHAR_IN_RX)); /* Clear all errors in the status variable */
     ExitCritical();                    /* Restore the PS register */
@@ -224,9 +222,7 @@ byte AS1_SendChar(AS1_TComData Chr)
   EnterCritical();                     /* Save the PS register */
   AS1_OutLen++;                        /* Increase number of bytes in the transmit buffer */
   OutBuffer[OutIndxW] = Chr;           /* Store char to buffer */
-  if (++OutIndxW >= AS1_OUT_BUF_SIZE) { /* Is the index out of the buffer? */
-    OutIndxW = 0U;                     /* Set the index to the start of the buffer */
-  }
+  OutIndxW = (byte)((OutIndxW + 1U) & (AS1_OUT_BUF_SIZE - 1U)); /* Update index */
   if (SCI1C2_TIE == 0U) {              /* Is the transmit interrupt already enabled? */
     SCI1C2_TIE = 0x01U;                /* If no than enable transmit interrupt */
   }
@@ -323,9 +319,7 @@ byte AS1_SendBlock(const AS1_TComData * Ptr, word Size, word *Snd)
     OnFreeTxBuf_semaphore = TRUE;      /* Set the OnFreeTxBuf_semaphore to block OnFreeTxBuf calling */
     AS1_OutLen++;                      /* Increase number of bytes in the transmit buffer */
     OutBuffer[OutIndxW] = *Ptr++;      /* Store char to buffer */
-    if (++OutIndxW >= AS1_OUT_BUF_SIZE) { /* Is the index out of the buffer? */
-      OutIndxW = 0U;                   /* Set the index to the start of the buffer */
-    }
+    OutIndxW = (byte)((OutIndxW + 1U) & (AS1_OUT_BUF_SIZE - 1U)); /* Update index */
     count++;                           /* Increase the count of sent data */
     if ((count == Size) || (AS1_OutLen == AS1_OUT_BUF_SIZE)) { /* Is the last desired char put into buffer or the buffer is full? */
       if (!local_OnFreeTxBuf_semaphore) { /* Was the OnFreeTxBuf_semaphore clear before enter the method? */
@@ -457,9 +451,7 @@ ISR(AS1_InterruptRx)
   if (AS1_InpLen < AS1_INP_BUF_SIZE) { /* Is number of bytes in the receive buffer lower than size of buffer? */
     AS1_InpLen++;                      /* Increse number of chars in the receive buffer */
     InpBuffer[InpIndxW] = Data;        /* Save received char to the receive buffer */
-    if (++InpIndxW >= AS1_INP_BUF_SIZE) { /* Is the index out of the buffer? */
-      InpIndxW = 0U;                   /* Set the index to the start of the buffer */
-    }
+    InpIndxW = (byte)((InpIndxW + 1U) & (AS1_INP_BUF_SIZE - 1U)); /* Update index */
     OnFlags |= ON_RX_CHAR;             /* Set flag "OnRXChar" */
     if (AS1_InpLen== AS1_INP_BUF_SIZE) { /* Is number of bytes in the receive buffer equal as a size of buffer? */
       OnFlags |= ON_FULL_RX;           /* If yes then set flag "OnFullRxBuff" */
@@ -506,9 +498,7 @@ ISR(AS1_InterruptTx)
     SerFlag |= RUNINT_FROM_TX;         /* Set flag "running int from TX" */
     (void)SCI1S1;                      /* Reset interrupt request flag */
     SCI1D = OutBuffer[OutIndxR];       /* Store char to transmitter register */
-    if (++OutIndxR >= AS1_OUT_BUF_SIZE) { /* Is the index out of the buffer? */
-      OutIndxR = 0U;                   /* Set the index to the start of the buffer */
-    }
+    OutIndxR = (byte)((OutIndxR + 1U) & (AS1_OUT_BUF_SIZE - 1U)); /* Update index */
   } else {
     if (!OnFreeTxBuf_semaphore) {
       OnFlags |= ON_FREE_TX;           /* Set flag "OnFreeTxBuf" */

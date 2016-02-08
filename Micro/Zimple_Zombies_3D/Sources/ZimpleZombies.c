@@ -6,24 +6,31 @@
  */
 #include "ZimpleZombies.h"
 
+//	ADC	related variables
+const bool	ADC_HOLD	=	TRUE;
+const byte	ADC_ACCEL_X	=	0;
+const byte	ADC_ACCEL_Y	=	1;
+const byte	ADC_ACCEL_Z	=	2;
+
 //	Sensor data arrays
+volatile char testData = 0;
 volatile accel_u accel = {0,0,0,0};
 volatile byte flex[4]	=	{	0,	0,	0, 0};	//	ID_CRC, 1, 2, 3
+
 //	Sensor data block size
 int dataBlockSize = 4;
 
 //	Program state variable
-byte PROGRAM_STATE = STATE_SETUP;
+byte PROGRAM_STATE = STATE_IDLE;
 
 byte sendData(bool id){
 	byte error;
 	switch(id){
 	case ID_ACCEL:
-		accel.sData.id = 0b11110011;
+		accel.sData.id = 0xF0;
 		error = AS1_SendBlock(accel.rData, 4, &dataBlockSize);
 		break;
 	case ID_FLEX:
-		error = AS1_SendBlock(flex, 4, &dataBlockSize);
 		break;
 	default:
 		error = 0;

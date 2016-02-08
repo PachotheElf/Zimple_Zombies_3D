@@ -53,7 +53,8 @@ extern byte PROGRAM_STATE;
 */
 void Accel_Timer_OnInterrupt(void)
 {
-	PROGRAM_STATE = STATE_MEASURE_ACCEL;
+	if(PROGRAM_STATE == STATE_IDLE)
+		PROGRAM_STATE = STATE_MEASURE_ACCEL;
 }
 
 /*
@@ -163,7 +164,6 @@ void  AS1_OnFreeTxBuf(void)
 */
 void AD1_OnEnd(void)
 {
-	PROGRAM_STATE = STATE_WORK_ACCEL;
 }
 
 

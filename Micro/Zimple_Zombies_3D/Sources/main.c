@@ -44,12 +44,17 @@
 
 extern byte PROGRAM_STATE;
 extern volatile accel_u accel;
+extern volatile char testData;
+extern const bool	ADC_HOLD;
+extern const byte	ADC_ACCEL_X;
+extern const byte	ADC_ACCEL_Y;
+extern const byte	ADC_ACCEL_Z;
 
 void main(void)
 {
   /* Write your local variable definition here */
 	byte error = 0;
-	PROGRAM_STATE = STATE_SETUP;
+	PROGRAM_STATE = STATE_IDLE;
   /*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
   PE_low_level_init();
   /*** End of Processor Expert internal initialization.                    ***/
@@ -57,25 +62,31 @@ void main(void)
   /* Write your code here */
   while(TRUE){
 	  switch(PROGRAM_STATE){
-	  case STATE_SETUP:
-		  PROGRAM_STATE = STATE_IDLE;
-		  break;
 	  case STATE_MEASURE_ACCEL:
 		  error = AD1_MeasureChan(ADC_HOLD, ADC_ACCEL_X);
+		  error = AD1_GetChanValue(ADC_ACCEL_X, &(accel.uData.x));
+		  error = AD1_MeasureChan(ADC_HOLD, ADC_ACCEL_Y);
+  		  error = AD1_GetChanValue(ADC_ACCEL_Y, &(accel.uData.y));
+  		  error = AD1_MeasureChan(ADC_HOLD, ADC_ACCEL_Z);
+  		  error = AD1_GetChanValue(ADC_ACCEL_Z, &(accel.uData.z));
 		  PROGRAM_STATE = STATE_WORK_ACCEL;
 		  break;
 	  case STATE_MEASURE_FLEX:
 		  break;
 	  case STATE_WORK_ACCEL:
-		  error = AD1_GetChanValue(ADC_ACCEL_X, &accel.sData.x);
+		  accel.uData.x =(ACCEL_OFFSET_X + (int)(accel.uData.x-ACCEL_OFFSET_X)*ACCEL_SCALER_X);
+		  accel.uData.y =(ACCEL_OFFSET_Y + (int)(accel.uData.y-ACCEL_OFFSET_Y)*ACCEL_SCALER_Y);
+		  accel.uData.z =(ACCEL_OFFSET_Z + (int)(accel.uData.z-ACCEL_OFFSET_Z)*ACCEL_SCALER_Z);
 		  PROGRAM_STATE = STATE_SEND_ACCEL;
 		  break;
 	  case STATE_WORK_FLEX:
 		  break;
 	  case STATE_SEND_ACCEL:
 		  sendData(ID_ACCEL);
+		  PROGRAM_STATE = STATE_IDLE;
 		  break;
 	  case STATE_SEND_FLEX:
+		  PROGRAM_STATE = STATE_IDLE;
 		  break;
 	  case STATE_IDLE:
 	  default:

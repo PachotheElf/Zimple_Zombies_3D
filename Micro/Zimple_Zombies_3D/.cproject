@@ -3,8 +3,8 @@
 
 <cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
-		<cconfiguration id="toolchain.config.hcs08.release.133680705">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="toolchain.config.hcs08.release.133680705" moduleId="org.eclipse.cdt.core.settings" name="FLASH">
+		<cconfiguration id="toolchain.config.hcs08.release.1801606064">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="toolchain.config.hcs08.release.1801606064" moduleId="org.eclipse.cdt.core.settings" name="FLASH">
 				<externalSettings/>
 				<extensions>
 					<extension id="org.eclipse.cdt.managedbuilder.core.ManagedBuildManager" point="org.eclipse.cdt.core.ScannerInfoProvider"/>
@@ -21,67 +21,52 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="abs" artifactName="Zimple_Zombies_3D" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="&quot;${system:ECLIPSE_HOME}/../gnu/bin/rm&quot; -f" description="" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;com.freescale.core.ide.cdt.errorParsers.MwfeErrorParser;com.freescale.core.ide.cdt.errorParsers.LnkErrorParser;com.freescale.core.ide.cdt.errorParsers.AsmErrorParser;com.freescale.core.ide.cdt.errorParsers.CobjErrorParser;com.freescale.core.ide.cdt.errorParsers.IcodeErrorParser;com.freescale.core.ide.cdt.errorParsers.LltErrorParser;com.freescale.core.ide.cdt.errorParsers.S08ErrorParser;" id="toolchain.config.hcs08.release.133680705" isPrebuildInvalidatingBuild="false" name="FLASH" parent="toolchain.config.hcs08.release">
-					<folderInfo id="toolchain.config.hcs08.release.133680705." name="/" resourcePath="">
-						<toolChain errorParsers="" id="hcs08.project.toolchain.1086038241" name="HCS08 Toolchain" superClass="hcs08.project.toolchain">
-							<option id="hc08.toolchain.sharedoption.mmu.559721720" name="Enable Memory Management Unit (MMU) Support (-MMU)" superClass="hc08.toolchain.sharedoption.mmu" value="true" valueType="boolean"/>
-							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="hc08.toolchain.platform.1287037250" name="HC08 Targetplatform" superClass="hc08.toolchain.platform"/>
-							<builder buildPath="${ProjDirPath}/FLASH" errorParsers="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;org.eclipse.cdt.core.GmakeErrorParser;com.freescale.core.ide.cdt.errorParsers.LltErrorParser;com.freescale.core.ide.cdt.errorParsers.AsmErrorParser;com.freescale.core.ide.cdt.errorParsers.IcodeErrorParser;com.freescale.core.ide.cdt.errorParsers.CobjErrorParser;com.freescale.core.ide.cdt.errorParsers.S08ErrorParser;com.freescale.core.ide.cdt.errorParsers.LnkErrorParser;com.freescale.core.ide.cdt.errorParsers.MwfeErrorParser" id="hc08.toolchain.builder.2044660660" keepEnvironmentInBuildfile="false" name="GNU Make Builder" parallelBuildOn="true" parallelBuildWorkspaceOn="true" parallelizationNumber="optimal" superClass="hc08.toolchain.builder">
-								<outputEntries>
-									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="FLASH"/>
-								</outputEntries>
-							</builder>
-							<tool errorParsers="" id="s08.toolchain.decoder.1313731991" name="S08 Disassembler" superClass="s08.toolchain.decoder"/>
-							<tool errorParsers="" id="hc08.toolchain.linker.2066088410" name="S08 Linker" superClass="hc08.toolchain.linker">
-								<option id="hc08.toolchain.linker.base.general.paramFile.1231267962" name="Parameter File" superClass="hc08.toolchain.linker.base.general.paramFile" value="${ProjDirPath}/Project_Settings/Linker_Files/ProcessorExpert.prm" valueType="string"/>
-								<option id="hc08.toolchain.linker.base.libraries.libs.2084280815" name="Libraries" superClass="hc08.toolchain.linker.base.libraries.libs"/>
-								<option id="hc08.toolchain.linker.base.messages.WmsgSd.1249043511" name="Set messages to Disable" superClass="hc08.toolchain.linker.base.messages.WmsgSd" value="-WmsgSd1100 -WmsgSd1912" valueType="string"/>
-								<inputType id="hc08.toolchain.linker.base.input.196009427" name="Linker Input" superClass="hc08.toolchain.linker.base.input">
+				<configuration artifactExtension="abs" artifactName="Zimple_Zombies_3D" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="&quot;${system:ECLIPSE_HOME}/../gnu/bin/rm&quot; -f" description="" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;com.freescale.core.ide.cdt.errorParsers.MwfeErrorParser;com.freescale.core.ide.cdt.errorParsers.LnkErrorParser;com.freescale.core.ide.cdt.errorParsers.AsmErrorParser;com.freescale.core.ide.cdt.errorParsers.CobjErrorParser;com.freescale.core.ide.cdt.errorParsers.IcodeErrorParser;com.freescale.core.ide.cdt.errorParsers.LltErrorParser;com.freescale.core.ide.cdt.errorParsers.S08ErrorParser;" id="toolchain.config.hcs08.release.1801606064" isPrebuildInvalidatingBuild="false" name="FLASH" parent="toolchain.config.hcs08.release">
+					<folderInfo id="toolchain.config.hcs08.release.1801606064." name="/" resourcePath="">
+						<toolChain errorParsers="" id="hcs08.project.toolchain.1711320105" name="HCS08 Toolchain" superClass="hcs08.project.toolchain">
+							<option id="hc08.toolchain.sharedoption.mmu.1069251749" superClass="hc08.toolchain.sharedoption.mmu" value="true" valueType="boolean"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="hc08.toolchain.platform.494721259" name="HC08 Targetplatform" superClass="hc08.toolchain.platform"/>
+							<builder buildPath="${ProjDirPath}/FLASH" errorParsers="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;org.eclipse.cdt.core.GmakeErrorParser;com.freescale.core.ide.cdt.errorParsers.LltErrorParser;com.freescale.core.ide.cdt.errorParsers.AsmErrorParser;com.freescale.core.ide.cdt.errorParsers.IcodeErrorParser;com.freescale.core.ide.cdt.errorParsers.CobjErrorParser;com.freescale.core.ide.cdt.errorParsers.S08ErrorParser;com.freescale.core.ide.cdt.errorParsers.LnkErrorParser;com.freescale.core.ide.cdt.errorParsers.MwfeErrorParser" id="hc08.toolchain.builder.1070985618" name="GNU Make Builder.FLASH" parallelBuildOn="true" parallelBuildWorkspaceOn="true" parallelizationNumber="optimal" superClass="hc08.toolchain.builder"/>
+							<tool errorParsers="" id="s08.toolchain.decoder.1398479370" name="S08 Disassembler" superClass="s08.toolchain.decoder"/>
+							<tool errorParsers="" id="hc08.toolchain.linker.1088169878" name="S08 Linker" superClass="hc08.toolchain.linker">
+								<option id="hc08.toolchain.linker.base.general.paramFile.1763078808" superClass="hc08.toolchain.linker.base.general.paramFile" value="${ProjDirPath}/Project_Settings/Linker_Files/ProcessorExpert.prm" valueType="string"/>
+								<option id="hc08.toolchain.linker.base.libraries.libs.1244559798" superClass="hc08.toolchain.linker.base.libraries.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/lib/hc08c/lib/ansifs.lib&quot;"/>
+								</option>
+								<option id="hc08.toolchain.linker.base.messages.WmsgSd.960373519" superClass="hc08.toolchain.linker.base.messages.WmsgSd" value="-WmsgSd1100 -WmsgSd1912" valueType="string"/>
+								<inputType id="hc08.toolchain.linker.base.input.2006415135" name="Linker Input" superClass="hc08.toolchain.linker.base.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
 								</inputType>
 							</tool>
-							<tool errorParsers="" id="hc08.toolchain.burner.335155351" name="S08 Burner" superClass="hc08.toolchain.burner"/>
-							<tool errorParsers="" id="hcs08.toolchain.compiler.1705221038" name="HCS08 Compiler" superClass="hcs08.toolchain.compiler">
-								<option id="hc08.toolchain.compiler.base.codegen.ieee32.doubles.681001824" name="Use IEEE32 for double (default is IEEE64)" superClass="hc08.toolchain.compiler.base.codegen.ieee32.doubles" value="true" valueType="boolean"/>
-								<option id="hc08.toolchain.compiler.base.typesize.double.279425961" name="double " superClass="hc08.toolchain.compiler.base.typesize.double" value="hc08.toolchain.compiler.base.typesize.double.32" valueType="enumerated"/>
-								<option id="hsc08.toolchain.compiler.base.input.i.633360136" name="Include File Path (-I)" superClass="hsc08.toolchain.compiler.base.input.i" valueType="includePath">
-									<listOptionValue builtIn="false" value="C:/Users/Pacho/Documents/GitHub/Zimple_Zombies_3D/Micro/Zimple_Zombies_3D/Project_Headers"/>
-									<listOptionValue builtIn="false" value="&quot;C:/Freescale/CW MCU v10.6/MCU/lib/hc08c/device/src&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:/Freescale/CW MCU v10.6/MCU/lib/hc08c/lib&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:/Freescale/CW MCU v10.6/MCU/lib/hc08c/src&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:/Freescale/CW MCU v10.6/MCU/lib/hc08c/device/include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:/Freescale/CW MCU v10.6/MCU/lib/hc08c/include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:/Freescale/CW MCU v10.6/MCU/lib/hc08c/device/asm_include&quot;"/>
-									<listOptionValue builtIn="false" value="C:/Users/Pacho/Documents/GitHub/Zimple_Zombies_3D/Micro/Zimple_Zombies_3D/Generated_Code"/>
-									<listOptionValue builtIn="false" value="C:/Users/Pacho/Documents/GitHub/Zimple_Zombies_3D/Micro/Zimple_Zombies_3D/Sources"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources&quot;"/>
+							<tool errorParsers="" id="hc08.toolchain.burner.936716112" name="S08 Burner" superClass="hc08.toolchain.burner"/>
+							<tool errorParsers="" id="hcs08.toolchain.compiler.1743971764" name="HCS08 Compiler" superClass="hcs08.toolchain.compiler">
+								<option id="hc08.toolchain.compiler.base.codegen.ieee32.doubles.293003031" superClass="hc08.toolchain.compiler.base.codegen.ieee32.doubles" value="true" valueType="boolean"/>
+								<option id="hc08.toolchain.compiler.base.typesize.double.199092170" superClass="hc08.toolchain.compiler.base.typesize.double" value="hc08.toolchain.compiler.base.typesize.double.32" valueType="enumerated"/>
+								<option id="hsc08.toolchain.compiler.base.input.i.1123724887" superClass="hsc08.toolchain.compiler.base.input.i" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/lib/hc08c/device/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/lib/hc08c/lib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/lib/hc08c/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/lib/hc08c/device/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/lib/hc08c/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/lib/hc08c/device/asm_include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources&quot;"/>
 								</option>
-								<inputType id="hcs08.toolchain.compiler.base.input.c.574083250" name="HCS08 Compiler C Input" superClass="hcs08.toolchain.compiler.base.input.c"/>
-								<inputType id="hcs08.toolchain.compiler.base.input.cpp.1600285074" name="HCS08 Compiler CPP Input" superClass="hcs08.toolchain.compiler.base.input.cpp"/>
+								<inputType id="hcs08.toolchain.compiler.base.input.c.810903748" name="HCS08 Compiler C Input" superClass="hcs08.toolchain.compiler.base.input.c"/>
+								<inputType id="hcs08.toolchain.compiler.base.input.cpp.953520471" name="HCS08 Compiler CPP Input" superClass="hcs08.toolchain.compiler.base.input.cpp"/>
 							</tool>
-							<tool errorParsers="" id="hc08.toolchain.assembler.1994515988" name="HCS08 Assembler" superClass="hc08.toolchain.assembler">
-								<option id="hc08.toolchain.asm.base.output.mmu.527976530" name="MMU support (-MMU)" superClass="hc08.toolchain.asm.base.output.mmu" value="true" valueType="boolean"/>
-								<option id="hc08.toolchain.assembler.base.include.dirs.960008307" superClass="hc08.toolchain.assembler.base.include.dirs" valueType="includePath">
-									<listOptionValue builtIn="false" value="C:/Users/Pacho/Documents/GitHub/Zimple_Zombies_3D/Micro/Zimple_Zombies_3D/Project_Headers"/>
-									<listOptionValue builtIn="false" value="&quot;C:/Freescale/CW MCU v10.6/MCU/lib/hc08c/device/src&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:/Freescale/CW MCU v10.6/MCU/lib/hc08c/lib&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:/Freescale/CW MCU v10.6/MCU/lib/hc08c/src&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:/Freescale/CW MCU v10.6/MCU/lib/hc08c/device/include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:/Freescale/CW MCU v10.6/MCU/lib/hc08c/include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:/Freescale/CW MCU v10.6/MCU/lib/hc08c/device/asm_include&quot;"/>
-									<listOptionValue builtIn="false" value="C:/Users/Pacho/Documents/GitHub/Zimple_Zombies_3D/Micro/Zimple_Zombies_3D/Generated_Code"/>
-									<listOptionValue builtIn="false" value="C:/Users/Pacho/Documents/GitHub/Zimple_Zombies_3D/Micro/Zimple_Zombies_3D/Sources"/>
-								</option>
-								<inputType id="hc08.toolchain.assembler.base.input.649777192" name="HC08 Assembler Input" superClass="hc08.toolchain.assembler.base.input"/>
+							<tool errorParsers="" id="hc08.toolchain.assembler.1013361661" name="HCS08 Assembler" superClass="hc08.toolchain.assembler">
+								<option id="hc08.toolchain.asm.base.output.mmu.960520178" superClass="hc08.toolchain.asm.base.output.mmu" value="true" valueType="boolean"/>
+								<inputType id="hc08.toolchain.assembler.base.input.644783198" name="HC08 Assembler Input" superClass="hc08.toolchain.assembler.base.input"/>
 							</tool>
-							<tool errorParsers="" id="hc08.toolchain.preprocessor.1263740367" name="HCS08 Preprocessor" superClass="hc08.toolchain.preprocessor"/>
+							<tool errorParsers="" id="hc08.toolchain.preprocessor.1540379696" name="HCS08 Preprocessor" superClass="hc08.toolchain.preprocessor"/>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="toolchain.config.hcs08.release.133680705..settings/com.freescale.processorexpert.core.prefs" name="com.freescale.processorexpert.core.prefs" rcbsApplicability="disable" resourcePath=".settings/com.freescale.processorexpert.core.prefs" toolsToInvoke=""/>
+					<fileInfo id="toolchain.config.hcs08.release.1801606064..settings/com.freescale.processorexpert.core.prefs" name="com.freescale.processorexpert.core.prefs" rcbsApplicability="disable" resourcePath=".settings/com.freescale.processorexpert.core.prefs" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="ZimpleZombies.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding=".settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -89,17 +74,17 @@
 		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="org.eclipse.cdt.core.pathentry"/>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-		<project id="Zimple_Zombies_3D.toolchain.hcs08.executable.989788470" name="Freescale HCS08 Project" projectType="toolchain.hcs08.executable"/>
+		<project id="Zimple_Zombies_3D.toolchain.hcs08.executable.1983278678" name="Freescale HCS08 Project" projectType="toolchain.hcs08.executable"/>
 	</storageModule>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="toolchain.config.hcs08.release.133680705;toolchain.config.hcs08.release.133680705.;hcs08.toolchain.compiler.1705221038;hcs08.toolchain.compiler.base.input.cpp.1600285074">
+		<scannerConfigBuildInfo instanceId="toolchain.config.hcs08.release.1801606064;toolchain.config.hcs08.release.1801606064.;hcs08.toolchain.compiler.1743971764;hcs08.toolchain.compiler.base.input.cpp.953520471">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.freescale.hc08.cdt.toolchain.hcs08.discoveryProfile"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="toolchain.config.hcs08.release.133680705;toolchain.config.hcs08.release.133680705.;hcs08.toolchain.compiler.1705221038;hcs08.toolchain.compiler.base.input.c.574083250">
+		<scannerConfigBuildInfo instanceId="toolchain.config.hcs08.release.1801606064;toolchain.config.hcs08.release.1801606064.;hcs08.toolchain.compiler.1743971764;hcs08.toolchain.compiler.base.input.c.810903748">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.freescale.hc08.cdt.toolchain.hcs08.discoveryProfile"/>
 		</scannerConfigBuildInfo>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.pathentry"/>
 </cproject>

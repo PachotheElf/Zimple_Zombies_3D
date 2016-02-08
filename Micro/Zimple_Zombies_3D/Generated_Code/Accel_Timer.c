@@ -6,7 +6,7 @@
 **     Component   : TimerInt
 **     Version     : Component 02.161, Driver 01.23, CPU db: 3.00.067
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2016-02-06, 16:12, # CodeGen: 8
+**     Date/Time   : 2016-02-07, 22:48, # CodeGen: 11
 **     Abstract    :
 **         This component "TimerInt" implements a periodic interrupt.
 **         When the component and its events are enabled, the "OnInterrupt"
@@ -23,11 +23,11 @@
 **             Prescaler               : divide-by-4
 **             Clock                   : 4194304 Hz
 **           Initial period/frequency
-**             Xtal ticks              : 328
-**             microseconds            : 10000
-**             milliseconds            : 10
-**             seconds (real)          : 0.009999990463
-**             Hz                      : 100
+**             Xtal ticks              : 492
+**             microseconds            : 15000
+**             milliseconds            : 15
+**             seconds (real)          : 0.015000104904
+**             Hz                      : 67
 **
 **         Runtime setting             : none
 **
@@ -141,7 +141,7 @@ void Accel_Timer_Init(void)
   setReg8(TPM1SC, 0x00U);              /* Stop HW; disable overflow interrupt and set prescaler to 0 */ 
   /* TPM1C0SC: CH0F=0,CH0IE=1,MS0B=0,MS0A=1,ELS0B=0,ELS0A=0,??=0,??=0 */
   setReg8(TPM1C0SC, 0x50U);            /* Set output compare mode and enable compare interrupt */ 
-  Accel_Timer_SetCV(0xA3D6U);          /* Initialize appropriate value to the compare/modulo/reload register */
+  Accel_Timer_SetCV(0xF5C2U);          /* Initialize appropriate value to the compare/modulo/reload register */
   /* TPM1CNTH: BIT15=0,BIT14=0,BIT13=0,BIT12=0,BIT11=0,BIT10=0,BIT9=0,BIT8=0 */
   setReg8(TPM1CNTH, 0x00U);            /* Reset HW Counter */ 
   /* TPM1SC: TOF=0,TOIE=0,CPWMS=0,CLKSB=0,CLKSA=1,PS2=0,PS1=1,PS0=0 */

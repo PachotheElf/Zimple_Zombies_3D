@@ -6,7 +6,7 @@
 **     Component   : ADC
 **     Version     : Component 01.697, Driver 01.30, CPU db: 3.00.067
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2016-02-06, 16:45, # CodeGen: 9
+**     Date/Time   : 2016-02-07, 21:38, # CodeGen: 6
 **     Abstract    :
 **         This device "ADC" implements an A/D converter,
 **         its control methods and interrupt/event handling procedure.
@@ -17,7 +17,7 @@
 **          Interrupt service/event                        : Enabled
 **            A/D interrupt                                : Vadc
 **            A/D interrupt priority                       : medium priority
-**          A/D channels                                   : 6
+**          A/D channels                                   : 3
 **            Channel0                                     : 
 **              A/D channel (pin)                          : PTA0_KBI1P0_TPM1CH0_ADP0_ACMP1PLUS
 **              A/D channel (pin) signal                   : 
@@ -26,15 +26,6 @@
 **              A/D channel (pin) signal                   : 
 **            Channel2                                     : 
 **              A/D channel (pin)                          : PTF0_ADP10
-**              A/D channel (pin) signal                   : 
-**            Channel3                                     : 
-**              A/D channel (pin)                          : PTF3_ADP13
-**              A/D channel (pin) signal                   : 
-**            Channel4                                     : 
-**              A/D channel (pin)                          : PTF4_ADP14
-**              A/D channel (pin) signal                   : 
-**            Channel5                                     : 
-**              A/D channel (pin)                          : PTF5_ADP15
 **              A/D channel (pin) signal                   : 
 **          A/D resolution                                 : 8 bits
 **          Conversion time                                : 4.768372 µs
@@ -54,11 +45,8 @@
 **          Get value directly                             : yes
 **          Wait for result                                : yes
 **     Contents    :
-**         Measure      - byte AD1_Measure(bool WaitForResult);
 **         MeasureChan  - byte AD1_MeasureChan(bool WaitForResult, byte Channel);
-**         GetValue     - byte AD1_GetValue(void* Values);
 **         GetChanValue - byte AD1_GetChanValue(byte Channel, void* Value);
-**         GetValue16   - byte AD1_GetValue16(word *Values);
 **
 **     Copyright : 1997 - 2014 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -145,41 +133,6 @@ void AD1_HWEnDi(void);
 */
 
 
-byte AD1_Measure(bool WaitForResult);
-/*
-** ===================================================================
-**     Method      :  AD1_Measure (component ADC)
-*/
-/*!
-**     @brief
-**         This method performs one measurement on all channels that
-**         are set in the component inspector. (Note: If the [number of
-**         conversions] is more than one the conversion of A/D channels
-**         is performed specified number of times.)
-**     @param
-**         WaitForResult   - Wait for a result of a
-**                           conversion. If [interrupt service] is
-**                           disabled, A/D peripheral doesn't support
-**                           measuring all channels at once or Autoscan
-**                           mode property isn't enabled and at the same
-**                           time the [number of channels] is greater
-**                           than 1, then the WaitForResult parameter is
-**                           ignored and the method waits for each
-**                           result every time. If the [interrupt
-**                           service] is disabled and a [number of
-**                           conversions] is greater than 1, the
-**                           parameter is ignored and the method also
-**                           waits for each result every time.
-**     @return
-**                         - Error code, possible codes:
-**                           ERR_OK - OK
-**                           ERR_SPEED - This device does not work in
-**                           the active speed mode
-**                           ERR_DISABLED - Device is disabled
-**                           ERR_BUSY - A conversion is already running
-*/
-/* ===================================================================*/
-
 byte AD1_MeasureChan(bool WaitForResult,byte Channel);
 /*
 ** ===================================================================
@@ -213,38 +166,6 @@ byte AD1_MeasureChan(bool WaitForResult,byte Channel);
 */
 /* ===================================================================*/
 
-byte AD1_GetValue(void *Values);
-/*
-** ===================================================================
-**     Method      :  AD1_GetValue (component ADC)
-*/
-/*!
-**     @brief
-**         Returns the last measured values for all channels. Format
-**         and width of the value is a native format of the A/D
-**         converter.
-**     @param
-**         Values          - Pointer to the array that contains
-**                           the measured data. Data type is a byte, a
-**                           word or an int. It depends on the supported
-**                           modes, resolution, etc. of the AD converter.
-**                           See the Version specific information for
-**                           the current CPU in [General Info].
-**     @return
-**                         - Error code, possible codes:
-**                           ERR_OK - OK
-**                           ERR_SPEED - This device does not work in
-**                           the active speed mode
-**                           ERR_NOTAVAIL - Requested value not
-**                           available
-**                           ERR_OVERRUN - External trigger overrun flag
-**                           was detected after the last value(s) was
-**                           obtained (for example by GetValue). This
-**                           error may not be supported on some CPUs
-**                           (see generated code).
-*/
-/* ===================================================================*/
-
 byte AD1_GetChanValue(byte Channel,void* Value);
 /*
 ** ===================================================================
@@ -275,36 +196,6 @@ byte AD1_GetChanValue(byte Channel,void* Value);
 **                           available
 **                           ERR_RANGE - Parameter "Channel" out of
 **                           range
-**                           ERR_OVERRUN - External trigger overrun flag
-**                           was detected after the last value(s) was
-**                           obtained (for example by GetValue). This
-**                           error may not be supported on some CPUs
-**                           (see generated code).
-*/
-/* ===================================================================*/
-
-byte AD1_GetValue16(word *Values);
-/*
-** ===================================================================
-**     Method      :  AD1_GetValue16 (component ADC)
-*/
-/*!
-**     @brief
-**         This method returns the last measured values of all channels.
-**         Compared with [GetValue] method this method returns more
-**         accurate result if the [number of conversions] is greater
-**         than 1 and [AD resolution] is less than 16 bits. In addition,
-**         the user code dependency on [AD resolution] is eliminated.
-**     @param
-**         Values          - Pointer to the array that contains
-**                           the measured data.
-**     @return
-**                         - Error code, possible codes:
-**                           ERR_OK - OK
-**                           ERR_SPEED - This device does not work in
-**                           the active speed mode
-**                           ERR_NOTAVAIL - Requested value not
-**                           available
 **                           ERR_OVERRUN - External trigger overrun flag
 **                           was detected after the last value(s) was
 **                           obtained (for example by GetValue). This
