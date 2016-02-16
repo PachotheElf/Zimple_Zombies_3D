@@ -1,0 +1,10 @@
+C:/Users/Pacho/Documents/GitHub/Zimple_Zombies_3D/Micro/Zimple_Zombies_3D/Project_Headers\../Sources\main.c:70:warning:C1801 Implicit parameter-declaration for 'AD1_Measure'
+C:/Users/Pacho/Documents/GitHub/Zimple_Zombies_3D/Micro/Zimple_Zombies_3D/Project_Headers\../Sources\main.c:70:warning:C2705 Possible loss of data
+C:/Users/Pacho/Documents/GitHub/Zimple_Zombies_3D/Micro/Zimple_Zombies_3D/Project_Headers\../Sources\main.c:74:warning:C1801 Implicit parameter-declaration for 'AD1_GetValue'
+C:/Users/Pacho/Documents/GitHub/Zimple_Zombies_3D/Micro/Zimple_Zombies_3D/Project_Headers\../Sources\main.c:74:warning:C2705 Possible loss of data
+C:/Users/Pacho/Documents/GitHub/Zimple_Zombies_3D/Micro/Zimple_Zombies_3D/Project_Headers\../Sources\main.c:82:warning:C1858 Partial implicit parameter declaration
+C:/Users/Pacho/Documents/GitHub/Zimple_Zombies_3D/Micro/Zimple_Zombies_3D/Sources\ZimpleZombies.h:53:information:C1440 This is causing previous message 1858
+C:/Users/Pacho/Documents/GitHub/Zimple_Zombies_3D/Micro/Zimple_Zombies_3D/Project_Headers\../Sources\main.c:83:warning:C1858 Partial implicit parameter declaration
+C:/Users/Pacho/Documents/GitHub/Zimple_Zombies_3D/Micro/Zimple_Zombies_3D/Sources\ZimpleZombies.h:54:information:C1440 This is causing previous message 1858
+C:/Users/Pacho/Documents/GitHub/Zimple_Zombies_3D/Micro/Zimple_Zombies_3D/Project_Headers\../Sources\main.c:83:warning:C1420 Result of function-call is ignored
+C:/Users/Pacho/Documents/GitHub/Zimple_Zombies_3D/Micro/Zimple_Zombies_3D/Project_Headers\../Sources\main.c:67:information:C4000 Condition always TRUE

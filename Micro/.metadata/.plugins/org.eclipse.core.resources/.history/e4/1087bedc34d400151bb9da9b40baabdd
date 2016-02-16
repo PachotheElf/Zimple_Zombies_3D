@@ -1,0 +1,30 @@
+/*
+ * ZimpleZombies.c
+ *
+ *  Created on: Jan 25, 2016
+ *      Author: Pacho
+ */
+#include "ZimpleZombies.h"
+
+//	ADC	related variables
+const bool	ADC_HOLD	=	TRUE;
+const byte	ADC_ACCEL_X	=	0;
+const byte	ADC_ACCEL_Y	=	1;
+const byte	ADC_PRXMT_1	=	2;
+
+//	Sensor data arrays
+volatile char testData = 0;
+volatile sensor_u sensors = {0,0,0,0};
+
+//	Sensor data block size
+int dataBlockSize = 4;
+
+//	Program state variable
+byte PROGRAM_STATE = STATE_IDLE;
+
+byte sendData(){
+	byte error;
+	accel.uData.id = 0xF0;
+	error = AS1_SendBlock(accel.rData, 4, &dataBlockSize);
+	return error;
+}

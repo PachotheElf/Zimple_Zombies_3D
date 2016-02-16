@@ -6,8 +6,6 @@
  */
 /* Including needed modules to compile this module/procedure */
 #include "Cpu.h"
-#include "Events.h"
-#include "Accel_Timer.h"
 #include "AS1.h"
 #include "AD1.h"
 /* Include shared modules, which are used for whole project */
@@ -19,51 +17,40 @@
 #ifndef ZIMPLEZOMBIES_H_
 #define ZIMPLEZOMBIES_H_
 
-//	Accelerometer data structure
-typedef struct accel_struct1{	//	Unsigned data structure
+//	Sensors data structure
+typedef struct sensor_struct1{	//	Unsigned data structure
 	byte id;
-	byte x;
-	byte y;
-	byte z;
-}accel_us;
-typedef struct accel_struct2{	//	Signed data structure
-	char id;
-	char x;
-	char y;
-	char z;
-}accel_s;
-typedef union accel_union{
+	byte accel_x;
+	byte accel_y;
+	byte prxmt_1;
+}sensor_us;
+typedef union sensor_union{
 	byte rData[4];
-	accel_s sData;		//	In case we can figure out how to send raw signed data through the serial port.
-	accel_us uData;
-}accel_u;
+	sensor_us uData;
+}sensor_u;
 
+//	General constants
+#define	SENSOR_BUFFER_SIZE	16
 //	Accelerometer constants
 #define ACCEL_OFFSET_X	117
 #define ACCEL_OFFSET_Y	117
-#define ACCEL_OFFSET_Z	117
 
 #define ACCEL_SCALER_X	1
 #define ACCEL_SCALER_Y	1
-#define ACCEL_SCALER_Z	0
 
-//	Sensor ID for communications
-#define ID_ACCEL	0
-#define	ID_FLEX		1
+//	Proximity constants
+#define PRXMT_OFFSET_1	1
+
+#define	PRXMT_SCALER_1	1
 
 //	Program states
-#define STATE_MEASURE_ACCEL		1
-#define	STATE_MEASURE_FLEX		2
-#define	STATE_WORK_ACCEL		3
-#define	STATE_WORK_FLEX			4
-#define	STATE_SEND_ACCEL		5
-#define	STATE_SEND_FLEX			6
-#define	STATE_IDLE				7
+#define STATE_MEASURE		1
+#define	STATE_WORK			2
+#define	STATE_IDLE			3
 
 
 //	Function prototypes
-byte ADC_queue(byte channel);
-byte ADC_processData(byte channel);
-byte sendData(bool ID);
+byte averageData();
+byte sendData();
 
 #endif /* ZIMPLEZOMBIES_H_ */

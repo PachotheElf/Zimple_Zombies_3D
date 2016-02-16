@@ -30,8 +30,10 @@
 /* Including needed modules to compile this module/procedure */
 #include "Cpu.h"
 #include "Events.h"
-#include "Accel_Timer.h"
+#include "Measure_Timer.h"
 #include "AS1.h"
+#include "Send_Timer.h"
+#include "Hall_Effect_Bit.h"
 #include "AD1.h"
 /* Include shared modules, which are used for whole project */
 #include "PE_Types.h"
@@ -43,12 +45,14 @@
 #include "ZimpleZombies.h"
 
 extern byte PROGRAM_STATE;
-extern volatile accel_u accel;
+extern volatile sensor_u sensors[SENSOR_BUFFER_SIZE];
+extern volatile char sensorDataCount;
+
 extern volatile char testData;
 extern const bool	ADC_HOLD;
 extern const byte	ADC_ACCEL_X;
 extern const byte	ADC_ACCEL_Y;
-extern const byte	ADC_ACCEL_Z;
+extern const byte	ADC_PRXMT_1;
 
 void main(void)
 {
@@ -62,30 +66,21 @@ void main(void)
   /* Write your code here */
   while(TRUE){
 	  switch(PROGRAM_STATE){
-	  case STATE_MEASURE_ACCEL:
-		  error = AD1_MeasureChan(ADC_HOLD, ADC_ACCEL_X);
-		  error = AD1_GetChanValue(ADC_ACCEL_X, &(accel.uData.x));
-		  error = AD1_MeasureChan(ADC_HOLD, ADC_ACCEL_Y);
-  		  error = AD1_GetChanValue(ADC_ACCEL_Y, &(accel.uData.y));
-  		  error = AD1_MeasureChan(ADC_HOLD, ADC_ACCEL_Z);
-  		  error = AD1_GetChanValue(ADC_ACCEL_Z, &(accel.uData.z));
-		  PROGRAM_STATE = STATE_WORK_ACCEL;
-		  break;
-	  case STATE_MEASURE_FLEX:
-		  break;
-	  case STATE_WORK_ACCEL:
-		  accel.uData.x =(ACCEL_OFFSET_X + (int)(accel.uData.x-ACCEL_OFFSET_X)*ACCEL_SCALER_X);
-		  accel.uData.y =(ACCEL_OFFSET_Y + (int)(accel.uData.y-ACCEL_OFFSET_Y)*ACCEL_SCALER_Y);
-		  accel.uData.z =(ACCEL_OFFSET_Z + (int)(accel.uData.z-ACCEL_OFFSET_Z)*ACCEL_SCALER_Z);
-		  PROGRAM_STATE = STATE_SEND_ACCEL;
-		  break;
-	  case STATE_WORK_FLEX:
-		  break;
-	  case STATE_SEND_ACCEL:
-		  sendData(ID_ACCEL);
+	  case STATE_MEASURE:
+		  error = AD1_Measure(ADC_HOLD);
+		  
+		  //	Get the sensor data if the program should wait for the ADC to finish measurements on all channels
+		  if(ADC_HOLD){
+			  error = AD1_GetValue((sensors[sensorDataCount++].rData)+1);
+			  if(sensorDataCount >= SENSOR_BUFFER_SIZE)	sensorDataCount = 0;
+		  }
+		  
 		  PROGRAM_STATE = STATE_IDLE;
 		  break;
-	  case STATE_SEND_FLEX:
+		  
+	  case STATE_WORK:	//	Take the average of all the data and then send it
+		  averageData();
+		  sendData();
 		  PROGRAM_STATE = STATE_IDLE;
 		  break;
 	  case STATE_IDLE:

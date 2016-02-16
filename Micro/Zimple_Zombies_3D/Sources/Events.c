@@ -36,12 +36,15 @@
 #include "ZimpleZombies.h"
 
 extern byte PROGRAM_STATE;
+extern const byte ADC_HOLD;
+extern volatile sensor_u sensors[SENSOR_BUFFER_SIZE];
+extern volatile byte sensorDataCount;
 
 /*
 ** ===================================================================
-**     Event       :  Accel_Timer_OnInterrupt (module Events)
+**     Event       :  Measure_Timer_OnInterrupt (module Events)
 **
-**     Component   :  Accel_Timer [TimerInt]
+**     Component   :  Measure_Timer [TimerInt]
 **     Description :
 **         When a timer interrupt occurs this event is called (only
 **         when the component is enabled - <Enable> and the events are
@@ -51,10 +54,10 @@ extern byte PROGRAM_STATE;
 **     Returns     : Nothing
 ** ===================================================================
 */
-void Accel_Timer_OnInterrupt(void)
+void Measure_Timer_OnInterrupt(void)
 {
 	if(PROGRAM_STATE == STATE_IDLE)
-		PROGRAM_STATE = STATE_MEASURE_ACCEL;
+		PROGRAM_STATE = STATE_MEASURE;
 }
 
 /*
@@ -164,8 +167,33 @@ void  AS1_OnFreeTxBuf(void)
 */
 void AD1_OnEnd(void)
 {
+	if(!ADC_HOLD){
+		byte error;
+		error = AD1_GetValue((sensors[sensorDataCount++].rData)+1);
+		if(sensorDataCount >= SENSOR_BUFFER_SIZE)	sensorDataCount = 0;
+	}
 }
 
+
+/*
+** ===================================================================
+**     Event       :  Send_Timer_OnInterrupt (module Events)
+**
+**     Component   :  Send_Timer [TimerInt]
+**     Description :
+**         When a timer interrupt occurs this event is called (only
+**         when the component is enabled - <Enable> and the events are
+**         enabled - <EnableEvent>). This event is enabled only if a
+**         <interrupt service/event> is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void Send_Timer_OnInterrupt(void)
+{
+	if(PROGRAM_STATE == STATE_IDLE)
+			PROGRAM_STATE = STATE_WORK;
+}
 
 /* END Events */
 

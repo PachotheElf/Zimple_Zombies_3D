@@ -34,17 +34,19 @@
 #include "PE_Error.h"
 #include "PE_Const.h"
 #include "IO_Map.h"
-#include "Accel_Timer.h"
+#include "Measure_Timer.h"
 #include "AS1.h"
+#include "Send_Timer.h"
+#include "Hall_Effect_Bit.h"
 #include "AD1.h"
 
 
-void Accel_Timer_OnInterrupt(void);
+void Measure_Timer_OnInterrupt(void);
 /*
 ** ===================================================================
-**     Event       :  Accel_Timer_OnInterrupt (module Events)
+**     Event       :  Measure_Timer_OnInterrupt (module Events)
 **
-**     Component   :  Accel_Timer [TimerInt]
+**     Component   :  Measure_Timer [TimerInt]
 **     Description :
 **         When a timer interrupt occurs this event is called (only
 **         when the component is enabled - <Enable> and the events are
@@ -142,6 +144,22 @@ void AD1_OnEnd(void);
 **         of <1 or more conversions>) is/are finished.
 **         The event is available only when the <Interrupt
 **         service/event> property is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void Send_Timer_OnInterrupt(void);
+/*
+** ===================================================================
+**     Event       :  Send_Timer_OnInterrupt (module Events)
+**
+**     Component   :  Send_Timer [TimerInt]
+**     Description :
+**         When a timer interrupt occurs this event is called (only
+**         when the component is enabled - <Enable> and the events are
+**         enabled - <EnableEvent>). This event is enabled only if a
+**         <interrupt service/event> is enabled.
 **     Parameters  : None
 **     Returns     : Nothing
 ** ===================================================================

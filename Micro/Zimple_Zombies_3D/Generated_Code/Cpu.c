@@ -7,7 +7,7 @@
 **     Version     : Component 01.003, Driver 01.40, CPU db: 3.00.067
 **     Datasheet   : MC9S08QE128RM Rev. 2 6/2007
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2016-02-07, 21:38, # CodeGen: 6
+**     Date/Time   : 2016-02-15, 19:14, # CodeGen: 19
 **     Abstract    :
 **         This component "MC9S08QE128_80" contains initialization 
 **         of the CPU and provides basic methods and events for 
@@ -66,9 +66,11 @@
 
 #pragma MESSAGE DISABLE C4002 /* WARNING C4002: Result not used is ignored */
 
-#include "Accel_Timer.h"
+#include "Measure_Timer.h"
 #include "AD1.h"
 #include "AS1.h"
+#include "Send_Timer.h"
+#include "Hall_Effect_Bit.h"
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
@@ -211,6 +213,10 @@ void PE_low_level_init(void)
   clrSetReg8Bits(PTBDD, 0x01U, 0x02U);  
   /* PTBD: PTBD1=1 */
   setReg8Bits(PTBD, 0x02U);             
+  /* PTDPE: PTDPE4=1 */
+  setReg8Bits(PTDPE, 0x10U);            
+  /* PTDDD: PTDDD4=0 */
+  clrReg8Bits(PTDDD, 0x10U);            
   /* PTASE: PTASE7=0,PTASE6=0,PTASE4=0,PTASE3=0,PTASE2=0,PTASE1=0,PTASE0=0 */
   clrReg8Bits(PTASE, 0xDFU);            
   /* PTBSE: PTBSE7=0,PTBSE6=0,PTBSE5=0,PTBSE4=0,PTBSE3=0,PTBSE2=0,PTBSE1=0,PTBSE0=0 */
@@ -248,12 +254,18 @@ void PE_low_level_init(void)
   /* PTJDS: PTJDS7=1,PTJDS6=1,PTJDS5=1,PTJDS4=1,PTJDS3=1,PTJDS2=1,PTJDS1=1,PTJDS0=1 */
   setReg8(PTJDS, 0xFFU);                
   /* ### Shared modules init code ... */
-  /* ### TimerInt "Accel_Timer" init code ... */
-  Accel_Timer_Init();
+  /* ### TimerInt "Measure_Timer" init code ... */
+  Measure_Timer_Init();
   /* ###  "AD1" init code ... */
   AD1_Init();
   /* ### Asynchro serial "AS1" init code ... */
   AS1_Init();
+  /* ### TimerInt "Send_Timer" init code ... */
+  Send_Timer_Init();
+  /* ### BitIO "Hall_Effect_Bit" init code ... */
+  /* Common peripheral initialization - ENABLE */
+  /* TPM1SC: CLKSB=0,CLKSA=1 */
+  clrSetReg8Bits(TPM1SC, 0x10U, 0x08U); 
   CCR_lock = (byte)0;
   __EI();                              /* Enable interrupts */
 }

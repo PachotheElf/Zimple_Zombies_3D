@@ -10,28 +10,32 @@
   </ToolchainSettings>
   <GeneratedFilesList>
     <GeneratedByPE>
-      <File Name="Documentation/Zimple_Zombies_3D_Settings.xml" FileDate="2016-02-07, 22:48:59" FileAge="1454901539285" FileType="3072" />
-      <File Name="Generated_Code/AD1.h" FileDate="2016-02-07, 21:38:56" FileAge="1454897336995" FileType="45637" CompNumb="9" />
-      <File Name="Generated_Code/AD1.c" FileDate="2016-02-07, 21:38:57" FileAge="1454897337032" FileType="45637" CompNumb="9" />
-      <File Name="Generated_Code/Vectors.c" FileDate="2016-02-07, 11:00:41" FileAge="1454859041602" FileType="45637" CompNumb="4" />
-      <File Name="Sources/main.c" FileDate="2016-02-07, 22:34:21" FileAge="1454900661640" FileType="128" />
+      <File Name="Documentation/Zimple_Zombies_3D_Settings.xml" FileDate="2016-02-15, 19:14:45" FileAge="1455579885410" FileType="3072" />
+      <File Name="Generated_Code/Send_Timer.h" FileDate="2016-02-15, 18:53:47" FileAge="1455578627458" FileType="45637" CompNumb="20" />
+      <File Name="Generated_Code/AD1.h" FileDate="2016-02-15, 18:38:53" FileAge="1455577733755" FileType="45637" CompNumb="9" />
+      <File Name="Generated_Code/Send_Timer.c" FileDate="2016-02-15, 18:53:47" FileAge="1455578627621" FileType="45637" CompNumb="20" />
+      <File Name="Generated_Code/Hall_Effect_Bit.h" FileDate="2016-02-15, 19:14:45" FileAge="1455579885038" FileType="45637" CompNumb="24" />
+      <File Name="Generated_Code/AD1.c" FileDate="2016-02-15, 18:38:54" FileAge="1455577734107" FileType="45637" CompNumb="9" />
+      <File Name="Generated_Code/Vectors.c" FileDate="2016-02-15, 19:14:45" FileAge="1455579885175" FileType="45637" CompNumb="4" />
+      <File Name="Sources/main.c" FileDate="2016-02-15, 19:14:45" FileAge="1455579885096" FileType="128" />
+      <File Name="Generated_Code/Hall_Effect_Bit.c" FileDate="2016-02-15, 19:14:45" FileAge="1455579885027" FileType="45637" CompNumb="24" />
       <File Name="Generated_Code/AS1.h" FileDate="2016-02-07, 11:00:41" FileAge="1454859041335" FileType="45637" CompNumb="10" />
       <File Name="Generated_Code/PE_Error.h" FileDate="2016-02-07, 10:54:02" FileAge="1454858642421" FileType="45637" />
       <File Name="Project_Settings/Linker_Files/ProcessorExpert.prm" FileDate="2016-02-07, 10:54:02" FileAge="1454858642232" FileType="8" CompNumb="4" />
       <File Name="Generated_Code/AS1.c" FileDate="2016-02-07, 11:00:41" FileAge="1454859041318" FileType="45637" CompNumb="10" />
       <File Name="Generated_Code/IO_Map.h" FileDate="2016-02-07, 10:54:02" FileAge="1454858642326" FileType="45637" />
+      <File Name="Generated_Code/Measure_Timer.h" FileDate="2016-02-15, 18:53:47" FileAge="1455578627552" FileType="45637" CompNumb="8" />
       <File Name="Generated_Code/PE_Types.h" FileDate="2016-02-07, 10:54:02" FileAge="1454858642452" FileType="45637" />
       <File Name="Generated_Code/IO_Map.c" FileDate="2016-02-07, 10:54:02" FileAge="1454858642310" FileType="45637" />
-      <File Name="Sources/Events.h" FileDate="2016-02-06, 16:12:12" FileAge="1454791332314" FileType="131328" />
-      <File Name="Documentation/Zimple_Zombies_3D_SIGNALS.txt" FileDate="2016-02-07, 22:48:59" FileAge="1454901539177" FileType="3072" />
-      <File Name="Documentation/Zimple_Zombies_3D.txt" FileDate="2016-02-07, 11:09:06" FileAge="1454859546271" FileType="3072" />
-      <File Name="Sources/Events.c" FileDate="2016-02-06, 16:44:57" FileAge="1454793297428" FileType="131328" />
+      <File Name="Generated_Code/Measure_Timer.c" FileDate="2016-02-15, 18:53:47" FileAge="1455578627595" FileType="45637" CompNumb="8" />
+      <File Name="Sources/Events.h" FileDate="2016-02-15, 19:14:45" FileAge="1455579885216" FileType="131328" />
+      <File Name="Documentation/Zimple_Zombies_3D_SIGNALS.txt" FileDate="2016-02-15, 19:14:45" FileAge="1455579885309" FileType="3072" />
+      <File Name="Documentation/Zimple_Zombies_3D.txt" FileDate="2016-02-15, 19:14:45" FileAge="1455579885481" FileType="3072" />
+      <File Name="Sources/Events.c" FileDate="2016-02-15, 18:50:41" FileAge="1455578441649" FileType="131328" />
       <File Name="Generated_Code/Cpu.h" FileDate="2016-02-07, 11:00:41" FileAge="1454859041513" FileType="45637" CompNumb="4" />
-      <File Name="Generated_Code/Accel_Timer.h" FileDate="2016-02-07, 22:48:59" FileAge="1454901539067" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/Cpu.c" FileDate="2016-02-07, 21:38:57" FileAge="1454897337068" FileType="45637" CompNumb="4" />
+      <File Name="Generated_Code/Cpu.c" FileDate="2016-02-15, 19:14:45" FileAge="1455579885146" FileType="45637" CompNumb="4" />
       <File Name="Generated_Code/PE_Const.h" FileDate="2016-02-07, 10:54:02" FileAge="1454858642406" FileType="45637" />
-      <File Name="Generated_Code/Accel_Timer.c" FileDate="2016-02-07, 22:48:59" FileAge="1454901539088" FileType="45637" CompNumb="8" />
     </GeneratedByPE>
   </GeneratedFilesList>
-  <CodeGenReference>12</CodeGenReference>
+  <CodeGenReference>20</CodeGenReference>
 </CodeGenerationInfo>
